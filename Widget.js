@@ -10,22 +10,26 @@ function(declare, BaseWidget, esriRequest) {
 
     btnTempAnualClicked: false,
     btnPrecAnualClicked: false,
+    XEMA: "XEMA_6372",
+    tempAnual: "wms_9115",
+    precAnual: "wms_347",
 
     postCreate: function(){
       this.inherited(arguments);
+      this.map.getLayer(this.XEMA).show();
     },
 
     _onBtnTempAnualClicked: function(){
-      this.map.getLayer("wms_9115").show();
-      this.map.getLayer("wms_347").hide();
+      this.map.getLayer(this.tempAnual).show();
+      this.map.getLayer(this.precAnual).hide();
       this.btnTempAnualClicked = true;
       this.btnPrecAnualClicked = false;
       this._dataRequest();
     },
 
     _onBtnPrecAnualClicked: function(){
-      this.map.getLayer("wms_347").show();
-      this.map.getLayer("wms_9115").hide();
+      this.map.getLayer(this.precAnual).show();
+      this.map.getLayer(this.tempAnual).hide();
       this.btnPrecAnualClicked = true;
       this.btnTempAnualClicked = false;
     }
