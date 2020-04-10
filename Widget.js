@@ -13,7 +13,6 @@ function(declare, BaseWidget, esriRequest) {
 
     postCreate: function(){
       this.inherited(arguments);
-
     },
 
     _onBtnTempAnualClicked: function(){
