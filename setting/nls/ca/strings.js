@@ -1,3 +1,3 @@
 define({
-    "configText": "Clau API del Servei Meteorològic de Catalunya"
+    "configText": "Introdueix la clau API:" 
   });
