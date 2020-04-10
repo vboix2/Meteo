@@ -1,3 +1,5 @@
 define({
-    "_widgetLabel": "Meteorologia"
+    "_widgetLabel": "Meteorologia",
+    "AnualTempTextBtn": "Temperatura anual",
+    "AnualPrecTextBtn": "Precipitació anual"
   });
