@@ -1,9 +1,9 @@
 
 define(['dojo/_base/declare',
   'jimu/BaseWidget',
-  "jimu/LayerInfos/LayerInfos"
+  'esri/request'
 ],
-function(declare, BaseWidget, LayerInfos) {
+function(declare, BaseWidget, esriRequest) {
   var clazz = declare([BaseWidget], {
 
     name: 'Meteo',
@@ -21,6 +21,7 @@ function(declare, BaseWidget, LayerInfos) {
       this.map.getLayer("wms_347").hide();
       this.btnTempAnualClicked = true;
       this.btnPrecAnualClicked = false;
+      this._dataRequest();
     },
 
     _onBtnPrecAnualClicked: function(){
