@@ -1,0 +1,17 @@
+{
+  "name": "Meteo",
+  "platform": "HTML",
+  "version": "1.0",
+  "wabVersion": "1.0",
+  "author": "Víctor Boix",
+  "description": "Widget d'informació meteorològica",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "hasConfig": false,
+    "hasStyle": false,
+    "hasLocale": false,
+    "hasUIFile": false,
+    "hasSettingPage": false
+  }
+}
