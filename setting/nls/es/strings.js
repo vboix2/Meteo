@@ -1,3 +1,3 @@
 define({
-    "configText": "Introduce la clave API:" 
-  });
+    "configText": "Introduce la clave API: "    
+});

@@ -1,3 +1,3 @@
 define({
-    "configText": "Introdueix la clau API:" 
-  });
+    "configText": "Introdueix la clau API: "    
+});
