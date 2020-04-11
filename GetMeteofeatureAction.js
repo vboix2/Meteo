@@ -21,17 +21,17 @@ define([
               if (f.attributes.YEAR<2009){
                 dades = "Dades no disponibles per a incendis anteriors al 2009";
               } else {
-                dades = "Temperatura: " + f.attributes.TEMPERATUR + " ºC <br/>";
-                dades += "Precipitació: " + f.attributes.PRECIPITAC + " mm <br/>";
-                dades += "Humitat relativa: " + f.attributes.HUMITAT + " % <br/>";
+                dades = "Temperatura màxima: " + f.attributes.TEMPERATUR + " ºC <br/>";
+                dades += "Precipitació acumulada: " + f.attributes.PRECIPITAC + " mm <br/>";
+                dades += "Humitat relativa mínima: " + f.attributes.HUMITAT + " % <br/>";
                 if (f.attributes.VENT==0){
-                  dades += "Intensitat del vent: (Dada no disponible)<br/><br/>";
+                  dades += "Intensitat màxima del vent: - <br/><br/>";
                 } else {
-                  dades += "Intensitat del vent: " + f.attributes.VENT + " m/s <br/><br/>";
+                  dades += "Intensitat màxima del vent: " + f.attributes.VENT + " m/s <br/><br/>";
                 }
+                var data = new Date(f.attributes.DATA);
                 metadades += "Dades de l'estació " + f.attributes.ESTACIO_XE + " durant el dia " +
-                f.attributes.DATA +  "<br/>";
-                
+                data.getDate() + "/" + String(data.getMonth()+1) + "/" + data.getFullYear() + "<br/>"; 
               }
 
           });
