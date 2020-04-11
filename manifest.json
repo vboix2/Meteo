@@ -18,6 +18,10 @@
     {
       "name": "GetMeteo",
       "uri": "GetMeteoFeatureAction"
+    },
+    {
+      "name": "GetActualMeteo",
+      "uri": "GetActualMeteoFeatureAction"
     }
   ]
 }

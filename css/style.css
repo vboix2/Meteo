@@ -1,9 +1,9 @@
-.dadesMeteo {
-    font-size: medium;
+h2.dadesMeteo{
+    font-size: large;
+    font-weight: bold;
     line-height: 1.5;
 }
-h2.dadesMeteo{
-    font-size: 2;
-    font-weight: bold;
+.dadesMeteo {
+    font-size: medium;
     line-height: 1.5;
 }

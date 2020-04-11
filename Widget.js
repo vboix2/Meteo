@@ -17,9 +17,6 @@ function(declare, BaseWidget, esriRequest) {
     postCreate: function(){
       this.inherited(arguments);
       this.map.getLayer(this.XEMA).show();
-      var textMeteo = "Selecciona un incendi i l'opció <i>Obtenir dades meteorològiques</i>.<br/>";
-      textMeteo = textMeteo + "Dades no disponibles per a incendis anteriors al 2009.";
-      this.infoMeteo.innerHTML = textMeteo;
     },
 
     _onBtnTempAnualClicked: function(){
