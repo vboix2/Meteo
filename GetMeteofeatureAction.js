@@ -14,25 +14,29 @@ define([
       onExecute: function(featureSet){
         WidgetManager.getInstance().triggerWidgetOpen(this.widgetId)
         .then(function(myWidget) {
-          var resultat = "";
+          var dades = "";
+          var metadades = "";
           
           featureSet.features.forEach(function(f){
               if (f.attributes.YEAR<2009){
-                resultat = "Dades no disponibles per a incendis anteriors al 2009";
+                dades = "Dades no disponibles per a incendis anteriors al 2009";
               } else {
-                resultat = "Temperatura: " + f.attributes.TEMPERATUR + " ºC <br/>";
-                resultat = resultat + "Precipitació: " + f.attributes.PRECIPITAC + " mm <br/>";
-                resultat = resultat + "Humitat relativa: " + f.attributes.HUMITAT + " % <br/>";
+                dades = "Temperatura: " + f.attributes.TEMPERATUR + " ºC <br/>";
+                dades += "Precipitació: " + f.attributes.PRECIPITAC + " mm <br/>";
+                dades += "Humitat relativa: " + f.attributes.HUMITAT + " % <br/>";
                 if (f.attributes.VENT==0){
-                  resultat = resultat + "Intensitat del vent: (Dada no disponible)<br/>";
+                  dades += "Intensitat del vent: (Dada no disponible)<br/><br/>";
                 } else {
-                  resultat = resultat + "Intensitat del vent: " + f.attributes.VENT + " m/s <br/>";
+                  dades += "Intensitat del vent: " + f.attributes.VENT + " m/s <br/><br/>";
                 }
+                metadades += "Dades de l'estació " + f.attributes.ESTACIO_XE + " durant el dia " +
+                f.attributes.DATA +  "<br/>";
                 
               }
 
           });
-          myWidget.infoMeteo.innerHTML = resultat;
+          myWidget.dadesMeteo.innerHTML = dades;
+          myWidget.metadadesMeteo.innerHTML = metadades;
 
         });
       }

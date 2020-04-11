@@ -1,9 +1,16 @@
-h2.dadesMeteo{
+.meteo {
+    line-height: 1.5;;
+}
+
+.meteo .titol{
     font-size: large;
     font-weight: bold;
-    line-height: 1.5;
 }
-.dadesMeteo {
+
+.meteo .dades {
     font-size: medium;
-    line-height: 1.5;
+}
+
+.meteo .metadades {
+    font-size: small;
 }
