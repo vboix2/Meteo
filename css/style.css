@@ -1,5 +1,5 @@
 .meteo {
-    line-height: 1.5;;
+    line-height: 1.5;
 }
 
 .meteo .titol{
@@ -12,5 +12,9 @@
 }
 
 .meteo .metadades {
+    font-size: small;
+}
+
+.meteo .form {
     font-size: small;
 }
