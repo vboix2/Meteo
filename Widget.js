@@ -7,8 +7,6 @@ function(declare, BaseWidget) {
 
     name: 'Meteo',
 
-    XEMA: "XEMA_6372",
-
     //Temperatures
     tempAnual: "wms_9115",
     tempMensual: "wms_8343",
@@ -25,15 +23,18 @@ function(declare, BaseWidget) {
     precMensual: "wms_5172",
     wmsPrecipitacio: {
       "1":"ATMOSFERA_ATLES6190_PPTGEN", "2":"ATMOSFERA_ATLES6190_PPTFEB",
-      "3":"ATMOSFERA_ATLES6190_PPTMARC", "4":"ATMOSFERA_ATLES6190_PPTABRIL",
+      "3":"ATMOSFERA_ATLES6190_PPTMARC", "4":"ATMOSFERA_ATLES6190_PPTABRI",
       "5":"ATMOSFERA_ATLES6190_PPTMAIG", "6":"ATMOSFERA_ATLES6190_PPTJUNY",
       "7":"ATMOSFERA_ATLES6190_PPTJULIO", "8":"ATMOSFERA_ATLES6190_PPTAGOST",
       "9":"ATMOSFERA_ATLES6190_PPTSETE", "10":"ATMOSFERA_ATLES6190_PPTOCT",
       "11":"ATMOSFERA_ATLES6190_PPTNOV", "12":"ATMOSFERA_ATLES6190_PPTDES"},
 
+    // XEMA
+    XEMA: "XEMA_6372",
+    xemaClicked: false,
+
     postCreate: function(){
       this.inherited(arguments);
-      //this.map.getLayer(this.XEMA).show();
     },
 
     _onBtnMostraClicked: function(){
@@ -78,6 +79,16 @@ function(declare, BaseWidget) {
       this.map.getLayer(this.tempAnual).hide();
       this.map.getLayer(this.precMensual).hide();
       this.map.getLayer(this.tempMensual).hide();
+    },
+
+    _onBtnXEMAClicked: function(){
+      if (this.xemaClicked){
+        this.map.getLayer(this.XEMA).hide();
+        this.xemaClicked = false;
+      } else {
+        this.map.getLayer(this.XEMA).show();
+        this.xemaClicked = true;
+      } 
     }
 
   });

@@ -1,6 +1,6 @@
-<div class="meteo"><h2 class="titol">Mapes climàtics</h2>
+<div class="meteo"><b class="titol">Mapes climàtics</b><br/><br/>
       <form data-dojo-attach-point="inputForm" class="form">
-            <input type="radio" name="mapa" value="temp">
+            <input type="radio" name="mapa" value="temp" checked="checked">
             <label for="temp">Temperatura</label><br>
             <input type="radio" name="mapa" value="prec">
             <label for="prec">Precipitació</label><br>
@@ -30,7 +30,10 @@
       data-dojo-attach-event="onclick:_onBtnAmagaClicked" >Amaga</span>
       <br/><br/>
       <hr/>
-      <h2 class="titol">Dades meteorològiques</h2>
+      <b class="titol">Dades meteorològiques</b><br/><br/>
+      <span class="jimu-btn" data-dojo-attach-point="btnXEMA" 
+      data-dojo-attach-event="onclick:_onBtnXEMAClicked">Estacions meteorològiques</span>
+      <br/><br/>
       <p class="metadades">Clica sobre un incendi o una estació meteorològica per obtenir-ne les dades.<br/><br/></p>
       <span class="dades" data-dojo-attach-point="dadesMeteo"></span>
       <span class="metadades" data-dojo-attach-point="metadadesMeteo"></span>
