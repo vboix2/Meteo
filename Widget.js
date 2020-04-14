@@ -1,8 +1,9 @@
 
 define(['dojo/_base/declare',
-  'jimu/BaseWidget'
+  'jimu/BaseWidget',
+  'dojo/_base/html'
 ],
-function(declare, BaseWidget) {
+function(declare, BaseWidget, html) {
   var clazz = declare([BaseWidget], {
 
     name: 'Meteo',
@@ -35,6 +36,13 @@ function(declare, BaseWidget) {
 
     postCreate: function(){
       this.inherited(arguments);
+
+      // Legend
+      var legendURL="";
+      this.map.getLayer(this.tempAnual).layerInfos.forEach(function(layerInfo){
+        legendURL = layerInfo.legendURL;
+      });
+      html.create("img", {src:legendURL}, this.legendImage);
     },
 
     _onBtnMostraClicked: function(){
