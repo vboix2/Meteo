@@ -1,20 +1,10 @@
 .meteo {
+    margin-top: 10px;
+    margin-left: 10px;
     line-height: 1.5;
-}
-
-.meteo .titol{
-    font-size: large;
-    font-weight: bold;
-}
-
-.meteo .dades {
-    font-size: medium;
-}
-
-.meteo .metadades {
     font-size: small;
 }
 
-.meteo .form {
-    font-size: small;
+h2{
+    margin-top: 10px;
 }
