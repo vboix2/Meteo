@@ -41,6 +41,8 @@ var clazz = declare([BaseWidget], {
 
   postCreate: function(){
     this.inherited(arguments);
+    this.metadadesMeteo.innerHTML = "Per obtenir les dades registrades durant la data d'un incendi " +
+    "clica sobre l'incendi i selecciona l'opció 'Situació meteorològica sinòptica'";
   },
 
   mapesBtn: function(){

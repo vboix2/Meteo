@@ -1,18 +1,25 @@
 .meteo {
     margin-top: 10px;
     margin-left: 10px;
-    line-height: 3;
     font-size: small;
+    line-height: 3;
 }
 
 h2{
     margin-top: 5px;
 }
-
 label {
     margin-left: 10px;
 }
-
 form {
     padding-left: 20px;
+}
+
+td {
+    padding-left: 20px;
+}
+
+.metadades {
+    font-size: smaller;
+    line-height: 1;
 }

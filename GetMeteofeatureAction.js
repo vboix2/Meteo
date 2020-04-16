@@ -21,23 +21,29 @@ define([
               if (f.attributes.YEAR<2009){
                 dades = "Dades no disponibles per a incendis anteriors al 2009";
               } else {
-                dades = "Temperatura màxima: " + f.attributes.TEMPERATUR + " ºC <br/>";
-                dades += "Precipitació acumulada: " + f.attributes.PRECIPITAC + " mm <br/>";
-                dades += "Humitat relativa mínima: " + f.attributes.HUMITAT + " % <br/>";
+                var temperatura = f.attributes.TEMPERATUR;
+                var precipitacio = f.attributes.PRECIPITAC;
+                var humitat = f.attributes.HUMITAT;
+                var vent;
                 if (f.attributes.VENT==0){
-                  dades += "Intensitat màxima del vent: - <br/><br/>";
+                  vent = " - ";
                 } else {
-                  dades += "Intensitat màxima del vent: " + f.attributes.VENT + " m/s <br/><br/>";
+                  vent = f.attributes.VENT;
                 }
-                var data = new Date(f.attributes.DATA);
-                metadades += "Dades de l'estació " + f.attributes.ESTACIO_XE + " durant el dia " +
-                data.getDate() + "/" + String(data.getMonth()+1) + "/" + data.getFullYear() + "<br/>"; 
-              }
 
+                var data = new Date(f.attributes.DATA);
+                metadades = "Dades de l'estació " + f.attributes.ESTACIO_XE + " durant el dia " +
+                  data.getDate() + "/" + String(data.getMonth() + 1) + "/" + data.getFullYear();
+
+                dades = "<table><tr><td>Temperatura màxima: </td><td> " + temperatura + "ºC </td></tr>" +
+                  "<tr><td>Precipitació acumulada: </td><td> " + precipitacio + "mm </td></tr>" +
+                  "<tr><td>Humitat relativa mínima: </td><td> " + humitat + "% </td></tr>" +
+                  "<tr><td>Intensitat màxima del vent: </td><td> " + vent + "m/s </td></tr>" +
+                  "</table>"
+              }
           });
           myWidget.dadesMeteo.innerHTML = dades;
           myWidget.metadadesMeteo.innerHTML = metadades;
-
         });
       }
   
