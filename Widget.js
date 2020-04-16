@@ -32,55 +32,43 @@ var clazz = declare([BaseWidget], {
 
   // XEMA
   XEMA: "XEMA_6372",
-  xemaClicked: false,
 
   variable: "temp",
   period: "0",
   mapesChecked: false,
+  xemaChecked: false,
 
 
   postCreate: function(){
     this.inherited(arguments);
   },
 
-  MapesBtn: function(){
-
+  mapesBtn: function(){
     this._hideAll();
-
     if (!this.mapesChecked) {
-      // Form options
-      var mapa;
-      this.inputForm.mapa.forEach(function (radio) {
-        if (radio.checked) {
-          mapa = radio.value;
-        }
-      });
-      this.variable = mapa;
-      this.period = this.inputForm.month.value;
-
-      // Temperature selected
-      if (this.variable == "temp") {
-        if (this.period == "0") {
-          this.map.getLayer(this.tempAnual).show();
-        } else {
-          this.map.getLayer(this.tempMensual).setVisibleLayers([this.wmsTemperatura[this.period]]);
-          this.map.getLayer(this.tempMensual).show();
-        }
-
-        // Precipitation selected 
-      } else if (this.variable == "prec") {
-        if (this.period == "0") {
-          this.map.getLayer(this.precAnual).show();
-        } else {
-          this.map.getLayer(this.precMensual).setVisibleLayers([this.wmsPrecipitacio[this.period]]);
-          this.map.getLayer(this.precMensual).show();
-        }
-      }
+      this.showMap();
       this.mapesChecked = true;
     } else {
       this.mapesChecked = false;
     }
+  },
 
+  variableBtn: function(){
+    this._hideAll();
+    if (this.mapesChecked) {
+      this.showMap();
+    }
+  },
+
+  readOptions: function(){
+    var mapa;
+    this.inputForm.mapa.forEach(function (radio) {
+      if (radio.checked) {
+        mapa = radio.value;
+      }
+    });
+    this.variable = mapa;
+    this.period = this.inputForm.period.value;
   },
 
   _hideAll: function(){
@@ -90,13 +78,37 @@ var clazz = declare([BaseWidget], {
     this.map.getLayer(this.tempMensual).hide();
   },
 
-  _onBtnXEMAClicked: function(){
-    if (this.xemaClicked){
-      this.map.getLayer(this.XEMA).hide();
-      this.xemaClicked = false;
-    } else {
+  showMap: function () {
+
+    this.readOptions();
+
+    // Temperature selected
+    if (this.variable == "temp") {
+      if (this.period == "0") {
+        this.map.getLayer(this.tempAnual).show();
+      } else {
+        this.map.getLayer(this.tempMensual).setVisibleLayers([this.wmsTemperatura[this.period]]);
+        this.map.getLayer(this.tempMensual).show();
+      }
+
+      // Precipitation selected 
+    } else if (this.variable == "prec") {
+      if (this.period == "0") {
+        this.map.getLayer(this.precAnual).show();
+      } else {
+        this.map.getLayer(this.precMensual).setVisibleLayers([this.wmsPrecipitacio[this.period]]);
+        this.map.getLayer(this.precMensual).show();
+      }
+    }
+  },
+
+  xemaBtn: function(){
+    if (!this.xemaChecked){
       this.map.getLayer(this.XEMA).show();
-      this.xemaClicked = true;
+      this.xemaChecked = true;
+    } else {
+      this.map.getLayer(this.XEMA).hide();
+      this.xemaChecked = false;
     } 
   }
 

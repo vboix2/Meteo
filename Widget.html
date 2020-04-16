@@ -1,17 +1,21 @@
 <div class="meteo">
+      
+      <h2>Informació meteorològica</h2>
 
       <input type="checkbox" id="mapes" data-dojo-type="dijit/form/CheckBox"
-      data-dojo-attach-event="onChange: MapesBtn">
+      data-dojo-attach-event="onChange: mapesBtn">
       <label for="mapes"> Mapes climàtics: </label><br/>
 
-      <form data-dojo-attach-point="inputForm" class="form">
+      <form data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="inputForm"
+      data-dojo-attach-event="onChange: variableBtn" class="form">
             <input type="radio" name="mapa" value="temp" checked="checked">
             <label for="temp">Temperatura</label><br>
             <input type="radio" name="mapa" value="prec">
-            <label for="prec">Precipitació</label><br>
-            <br/>Període: 
-            <select name="month">
-                  <option selected value="0">Anual</option>
+            <label for="prec">Precipitació</label><br/>
+            Període: 
+            <select data-dojo-type="dijit/form/Select" data-dojo-attach-event="onChange: variableBtn"
+            data-dojo-attach-point="variables" name="period">
+                  <option selected="selected" value="0">Anual</option>
                   <optgroup label="Mensual">
                         <option value="1">Gener</option>
                         <option value="2">Febrer</option>
@@ -28,11 +32,11 @@
                   </optgroup>
             </select>
       </form>
-      <br/><br/>
+      <input type="checkbox" id="xema" data-dojo-type="dijit/form/CheckBox"
+      data-dojo-attach-event="onChange: xemaBtn">
+      <label for="xema"> Estacions meteorològiques (XEMA)</label><br/><br/>
+
       <h2>Dades meteorològiques</h2>
-      <span class="jimu-btn" data-dojo-attach-point="btnXEMA" 
-      data-dojo-attach-event="onclick:_onBtnXEMAClicked">Estacions meteorològiques</span>
-      <br/><br/>
       <p class="metadades">Clica sobre un incendi o una estació meteorològica per obtenir-ne les dades.<br/><br/></p>
       <span class="dades" data-dojo-attach-point="dadesMeteo"></span>
       <span class="metadades" data-dojo-attach-point="metadadesMeteo"></span>
