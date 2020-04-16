@@ -1,9 +1,9 @@
 
 define(['dojo/_base/declare',
 'jimu/BaseWidget',
-'dojo/_base/html'
+'dijit/form/CheckBox'
 ],
-function(declare, BaseWidget, html) {
+function(declare, BaseWidget, CheckBox) {
 var clazz = declare([BaseWidget], {
 
   name: 'Meteo',
@@ -34,44 +34,53 @@ var clazz = declare([BaseWidget], {
   XEMA: "XEMA_6372",
   xemaClicked: false,
 
+  variable: "temp",
+  period: "0",
+  mapesChecked: false,
+
+
   postCreate: function(){
     this.inherited(arguments);
   },
 
-  _onBtnMostraClicked: function(){
+  MapesBtn: function(){
+
     this._hideAll();
 
-    // Form options
-    var mapa;
-    this.inputForm.mapa.forEach(function(radio){
-      if (radio.checked){
-        mapa = radio.value;
-      }
-    });
-    var month = this.inputForm.month.value;
+    if (!this.mapesChecked) {
+      // Form options
+      var mapa;
+      this.inputForm.mapa.forEach(function (radio) {
+        if (radio.checked) {
+          mapa = radio.value;
+        }
+      });
+      this.variable = mapa;
+      this.period = this.inputForm.month.value;
 
-    // Temperature selected
-    if (mapa=="temp"){
-      if (month=="0"){
-        this.map.getLayer(this.tempAnual).show();
-      } else if (month != "13"){
-        this.map.getLayer(this.tempMensual).setVisibleLayers([this.wmsTemperatura[month]]);
-        this.map.getLayer(this.tempMensual).show();
-      }
+      // Temperature selected
+      if (this.variable == "temp") {
+        if (this.period == "0") {
+          this.map.getLayer(this.tempAnual).show();
+        } else {
+          this.map.getLayer(this.tempMensual).setVisibleLayers([this.wmsTemperatura[this.period]]);
+          this.map.getLayer(this.tempMensual).show();
+        }
 
-    // Precipitation selected 
-    } else if (mapa=="prec"){
-      if (month=="0"){
-        this.map.getLayer(this.precAnual).show();
-      } else if (month != "13"){
-        this.map.getLayer(this.precMensual).setVisibleLayers([this.wmsPrecipitacio[month]]);
-        this.map.getLayer(this.precMensual).show();
+        // Precipitation selected 
+      } else if (this.variable == "prec") {
+        if (this.period == "0") {
+          this.map.getLayer(this.precAnual).show();
+        } else {
+          this.map.getLayer(this.precMensual).setVisibleLayers([this.wmsPrecipitacio[this.period]]);
+          this.map.getLayer(this.precMensual).show();
+        }
       }
+      this.mapesChecked = true;
+    } else {
+      this.mapesChecked = false;
     }
-  },
 
-  _onBtnAmagaClicked: function(){
-    this._hideAll();
   },
 
   _hideAll: function(){

@@ -1,5 +1,8 @@
 <div class="meteo">
-      <h2>Mapes climàtics</h2>
+
+      <input type="checkbox" id="mapes" data-dojo-type="dijit/form/CheckBox"
+      data-dojo-attach-event="onChange: MapesBtn">
+      <label for="mapes"> Mapes climàtics: </label><br/>
 
       <form data-dojo-attach-point="inputForm" class="form">
             <input type="radio" name="mapa" value="temp" checked="checked">
@@ -25,11 +28,6 @@
                   </optgroup>
             </select>
       </form>
-      <br/><br/>
-      <span class="jimu-btn" data-dojo-attach-point="btnTempAnual" 
-      data-dojo-attach-event="onclick:_onBtnMostraClicked" >Mostra al mapa</span>
-      <span class="jimu-btn" data-dojo-attach-point="btnPrecAnual" 
-      data-dojo-attach-event="onclick:_onBtnAmagaClicked" >Amaga</span>
       <br/><br/>
       <h2>Dades meteorològiques</h2>
       <span class="jimu-btn" data-dojo-attach-point="btnXEMA" 
