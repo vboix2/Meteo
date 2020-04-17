@@ -1,6 +1,6 @@
 <div class="meteo">
       <h2>Meteorologia</h2>
-      <div class="capes">
+      <div class="capa">
       <input type="checkbox" id="mapes" data-dojo-type="dijit/form/CheckBox"
       data-dojo-attach-event="onChange: mapesBtn">
       <label for="mapes"> Mapes climàtics: </label><br/>
@@ -8,7 +8,7 @@
       <form data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="inputForm"
       data-dojo-attach-event="onChange: variableBtn" class="form">
             <input type="radio" name="mapa" value="temp" checked="checked">
-            <label for="temp">Temperatura</label><br>
+            <label for="temp">Temperatura</label><br/>
             <input type="radio" name="mapa" value="prec">
             <label for="prec">Precipitació</label><br/>
             Període: 
@@ -30,13 +30,13 @@
                         <option value="12">Desembre</option>
                   </optgroup>
             </select>
-      </form>
+      </form></div>
+      <div class="capa">
       <input type="checkbox" id="xema" data-dojo-type="dijit/form/CheckBox"
-      data-dojo-attach-event="onChange: xemaBtn">
-      <label for="xema"> Estacions meteorològiques (XEMA)</label><br/><br/>
-      </div>
-      
+      data-dojo-attach-event="onChange: xemaBtn" class="capes">
+      <label for="xema"> Estacions meteorològiques (XEMA)</label><br/></div>
+      <br/>
       <h2>Dades meteorològiques</h2>
-      <span class="dades" data-dojo-attach-point="dadesMeteo"></span>
+      <span class="dades" data-dojo-attach-point="dadesMeteo"></span><br/>
       <span class="metadades" data-dojo-attach-point="metadadesMeteo"></span>
 </div>

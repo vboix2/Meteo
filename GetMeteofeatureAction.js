@@ -19,7 +19,7 @@ define([
           
           featureSet.features.forEach(function(f){
               if (f.attributes.YEAR<2009){
-                dades = "Dades no disponibles per a incendis anteriors al 2009";
+                metadades = "Dades no disponibles per a incendis anteriors al 2009";
               } else {
                 var temperatura = f.attributes.TEMPERATUR;
                 var precipitacio = f.attributes.PRECIPITAC;
@@ -36,9 +36,9 @@ define([
                   data.getDate() + "/" + String(data.getMonth() + 1) + "/" + data.getFullYear();
 
                 dades = "<table><tr><td>Temperatura màxima: </td><td> " + temperatura + "ºC </td></tr>" +
-                  "<tr><td>Precipitació acumulada: </td><td> " + precipitacio + "mm </td></tr>" +
+                  "<tr><td>Precipitació acumulada: </td><td> " + precipitacio + " mm </td></tr>" +
                   "<tr><td>Humitat relativa mínima: </td><td> " + humitat + "% </td></tr>" +
-                  "<tr><td>Intensitat màxima del vent: </td><td> " + vent + "m/s </td></tr>" +
+                  "<tr><td>Intensitat màxima del vent: </td><td> " + vent + " m/s </td></tr>" +
                   "</table>"
               }
           });
