@@ -1,6 +1,15 @@
 <div class="meteo">
       <h2>Meteorologia</h2>
       <div class="capa">
+
+      <input type="checkbox" id="weather" data-dojo-type="dijit/form/CheckBox"
+      data-dojo-attach-event="onChange: weatherBtn">
+      <label for="weather"> Valors actuals</label><br/>
+
+      <input type="checkbox" id="xema" data-dojo-type="dijit/form/CheckBox"
+      data-dojo-attach-event="onChange: xemaBtn" class="capes">
+      <label for="xema"> Estacions meteorològiques (XEMA)</label><br/>
+
       <input type="checkbox" id="mapes" data-dojo-type="dijit/form/CheckBox"
       data-dojo-attach-event="onChange: mapesBtn">
       <label for="mapes"> Mapes climàtics: </label><br/>
@@ -31,12 +40,8 @@
                   </optgroup>
             </select>
       </form></div>
-      <div class="capa">
-      <input type="checkbox" id="xema" data-dojo-type="dijit/form/CheckBox"
-      data-dojo-attach-event="onChange: xemaBtn" class="capes">
-      <label for="xema"> Estacions meteorològiques (XEMA)</label><br/></div>
       <br/>
-      <h2>Dades meteorològiques</h2>
+      <h2>Situació meteorològica dels incendis</h2>
       <span class="dades" data-dojo-attach-point="dadesMeteo"></span><br/>
       <span class="metadades" data-dojo-attach-point="metadadesMeteo"></span>
 </div>

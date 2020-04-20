@@ -8,6 +8,8 @@ var clazz = declare([BaseWidget], {
 
   name: 'Meteo',
 
+  weather: "NOAA_METAR_current_wind_speed_direction_v1_8525",
+
   //Temperatures
   tempAnual: "wms_9115",
   tempMensual: "wms_8343",
@@ -35,6 +37,7 @@ var clazz = declare([BaseWidget], {
 
   variable: "temp",
   period: "0",
+  weatherChecked: false,
   mapesChecked: false,
   xemaChecked: false,
 
@@ -43,6 +46,16 @@ var clazz = declare([BaseWidget], {
     this.inherited(arguments);
     this.metadadesMeteo.innerHTML = "Per obtenir les dades registrades durant la data d'un incendi " +
     "clica sobre l'incendi i selecciona l'opció 'Situació meteorològica sinòptica'";
+  },
+
+  weatherBtn: function(){
+    if (!this.weatherChecked) {
+      this.map.getLayer(this.weather).show();
+      this.weatherChecked = true;
+    } else {
+      this.map.getLayer(this.weather).hide();
+      this.weatherChecked = false;
+    }
   },
 
   mapesBtn: function(){
