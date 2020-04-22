@@ -3,7 +3,7 @@ define({
       _widgetLabel: "Meteorology",
       AnualTempTextBtn: "Anual temperature",
       AnualPrecTextBtn: "Anual precipitation",
-      _featureAction_GetMeteo: "Synoptic weather",
+      _featureAction_GetMeteo: "Weather",
       _featureAction_GetActualMeteo: "Actual weather"
     }),
     "ca": 1,
