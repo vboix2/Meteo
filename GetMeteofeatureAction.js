@@ -1,8 +1,10 @@
 define([
     'dojo/_base/declare',
     'jimu/BaseFeatureAction',
-    'jimu/WidgetManager'
-  ], function(declare, BaseFeatureAction, WidgetManager){
+    'jimu/WidgetManager',
+    'dojo/i18n!./nls/strings'
+
+  ], function(declare, BaseFeatureAction, WidgetManager, Strings){
     var clazz = declare(BaseFeatureAction, {
   
       iconFormat: 'png',
@@ -19,7 +21,7 @@ define([
           
           featureSet.features.forEach(function(f){
               if (f.attributes.YEAR<2009){
-                metadades = "Dades no disponibles per a incendis anteriors al 2009";
+                metadades = Strings.not_available_text;
               } else {
                 var temperatura = f.attributes.TEMPERATUR;
                 var precipitacio = f.attributes.PRECIPITAC;
@@ -32,13 +34,13 @@ define([
                 }
 
                 var data = new Date(f.attributes.DATA);
-                metadades = "Dades de l'estació " + f.attributes.ESTACIO_XE + " durant el dia " +
+                metadades = Strings.text_station1 + f.attributes.ESTACIO_XE + Strings.text_station2 +
                   data.getDate() + "/" + String(data.getMonth() + 1) + "/" + data.getFullYear();
 
-                dades = "<table><tr><td>Temperatura màxima: </td><td> " + temperatura + "ºC </td></tr>" +
-                  "<tr><td>Precipitació acumulada: </td><td> " + precipitacio + " mm </td></tr>" +
-                  "<tr><td>Humitat relativa mínima: </td><td> " + humitat + "% </td></tr>" +
-                  "<tr><td>Intensitat màxima del vent: </td><td> " + vent + " m/s </td></tr>" +
+                dades = "<table><tr><td>" + Strings.table_temp + ": </td><td> " + temperatura + "ºC </td></tr>" +
+                  "<tr><td>" + Strings.table_prec + ": </td><td> " + precipitacio + " mm </td></tr>" +
+                  "<tr><td>" + Strings.table_hum + ": </td><td> " + humitat + "% </td></tr>" +
+                  "<tr><td>" + Strings.table_wind + ": </td><td> " + vent + " m/s </td></tr>" +
                   "</table>"
               }
           });

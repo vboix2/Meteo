@@ -1,8 +1,9 @@
 
 define(['dojo/_base/declare',
-'jimu/BaseWidget'
+'jimu/BaseWidget',
+'dojo/i18n!./nls/strings'
 ],
-function(declare, BaseWidget) {
+function(declare, BaseWidget, Strings) {
 var clazz = declare([BaseWidget], {
 
   name: 'Meteo',
@@ -44,8 +45,8 @@ var clazz = declare([BaseWidget], {
     this.precAnual = this.map.getLayer("wms_347");
     this.precMensual = this.map.getLayer("wms_5172");
     
-    this.metadadesMeteo.innerHTML = "Per obtenir les dades registrades durant la data d'un incendi " +
-    "clica sobre l'incendi i selecciona l'opció '... Situació meteorològica'";
+    //this.metadadesMeteo.innerHTML = "Per obtenir les dades registrades durant la data d'un incendi clica sobre l'incendi i selecciona l'opció '... Situació meteorològica'";
+    this.metadadesMeteo.innerHTML = Strings.info_text;
   },
 
   weatherBtn: function(){

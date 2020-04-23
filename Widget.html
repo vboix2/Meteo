@@ -1,47 +1,47 @@
 <div class="meteo">
-      <h2>Meteorologia</h2>
+      <h2>${nls.header1}</h2>
       <div class="capa">
 
       <input type="checkbox" id="weather" data-dojo-type="dijit/form/CheckBox"
       data-dojo-attach-event="onChange: weatherBtn">
-      <label for="weather"> Valors actuals</label><br/>
+      <label for="weather"> ${nls.layer_weather}</label><br/>
 
       <input type="checkbox" id="xema" data-dojo-type="dijit/form/CheckBox"
       data-dojo-attach-event="onChange: xemaBtn" class="capes">
-      <label for="xema"> Estacions meteorològiques (XEMA)</label><br/>
+      <label for="xema"> ${nls.layer_xema}</label><br/>
 
       <input type="checkbox" id="mapes" data-dojo-type="dijit/form/CheckBox"
       data-dojo-attach-event="onChange: mapsBtn">
-      <label for="mapes"> Mapes climàtics: </label><br/>
+      <label for="mapes"> ${nls.layer_clima}:</label><br/>
 
       <form data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="inputForm"
       data-dojo-attach-event="onChange: variableBtn" class="form">
             <input type="radio" name="mapa" value="temp" checked="checked">
-            <label for="temp">Temperatura</label><br/>
+            <label for="temp">${nls.layer_temp}</label><br/>
             <input type="radio" name="mapa" value="prec">
-            <label for="prec">Precipitació</label><br/>
-            Període: 
+            <label for="prec">${nls.layer_prec}</label><br/>
+            ${nls.label_period}: 
             <select data-dojo-type="dijit/form/Select" data-dojo-attach-event="onChange: variableBtn"
             data-dojo-attach-point="variables" name="period">
-                  <option selected="selected" value="0">Anual</option>
+                  <option selected="selected" value="0">${nls.option_0}</option>
                   <optgroup label="Mensual">
-                        <option value="1">Gener</option>
-                        <option value="2">Febrer</option>
-                        <option value="3">Març</option>
-                        <option value="4">Abril</option>
-                        <option value="5">Maig</option>
-                        <option value="6">Juny</option>
-                        <option value="7">Juliol</option>
-                        <option value="8">Agost</option>
-                        <option value="9">Setembre</option>
-                        <option value="10">Octubre</option>
-                        <option value="11">Novembre</option>
-                        <option value="12">Desembre</option>
+                        <option value="1">${nls.option_1}</option>
+                        <option value="2">${nls.option_2}</option>
+                        <option value="3">${nls.option_3}</option>
+                        <option value="4">${nls.option_4}</option>
+                        <option value="5">${nls.option_5}</option>
+                        <option value="6">${nls.option_6}</option>
+                        <option value="7">${nls.option_7}</option>
+                        <option value="8">${nls.option_8}</option>
+                        <option value="9">${nls.option_9}</option>
+                        <option value="10">${nls.option_10}</option>
+                        <option value="11">${nls.option_11}</option>
+                        <option value="12">${nls.option_12}</option>
                   </optgroup>
             </select>
       </form></div>
       <br/>
-      <h2>Situació meteorològica dels incendis</h2>
+      <h2>${nls.header2}</h2>
       <span class="dades" data-dojo-attach-point="dadesMeteo"></span><br/>
       <span class="metadades" data-dojo-attach-point="metadadesMeteo"></span>
 </div>
