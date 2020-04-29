@@ -1,7 +1,7 @@
 define({
     root: ({
       _widgetLabel: "Meteorology",
-      header1: "Meteorological data",
+      header1: "Meteorological data layers",
       header2: "Wildfire weather",
       layer_weather: "Current values",
       layer_xema: "Weather stations (XEMA)",

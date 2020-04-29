@@ -1,6 +1,6 @@
 define({
   "_widgetLabel": "Meteorología",
-  "header1": "Datos meteorológicos",
+  "header1": "Capas de información meteorológica",
   "header2": "Situación meteorológica de los incendios",
   "layer_weather": "Valores actuales",
   "layer_xema": "Estaciones meteorológicas (XEMA)",

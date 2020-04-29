@@ -1,2 +1,5 @@
-# Widget d'informació meteorològica per a Web AppBuilder
+# Informació Meteorològica
+
+Widget d'informació meteorològica per a Web AppBuilder
+
 
