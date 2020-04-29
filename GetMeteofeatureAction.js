@@ -10,7 +10,8 @@ define([
       iconFormat: 'png',
   
       isFeatureSupported: function(featureSet){
-        return featureSet.features.length > 0 && featureSet.features[0].geometry.type !== 'point';
+        // Només per a la capa d'incendis forestals
+        return featureSet.features.length > 0 && featureSet.features[0].getLayer().id == "Incendis_forestals_9324";
       },
   
       onExecute: function(featureSet){
@@ -22,27 +23,29 @@ define([
 
           featureSet.features.forEach(function (f) {
             if (f.attributes.YEAR < 2009) {
+              // Incendis sense informació meteorològica
               metadades = Strings.not_available_text;
             } else {
+              // Incendis amb informació meteorològica
               var temperatura = f.attributes.TEMPERATUR;
               var precipitacio = f.attributes.PRECIPITAC;
               var humitat = f.attributes.HUMITAT;
               var vent = f.attributes.VENT;
               station = f.attributes.ESTACIO_XE;
 
-              // null values
+              // Valors nuls
               if (temperatura == 0) temperatura = " - ";
               if (humitat == 0) humitat = " - ";
               if (vent == 0) vent = " - ";
 
-              // weather data
+              // Taula d'informació meteorològica
               dades = "<table><tr><td>" + Strings.table_temp + ": </td><td> " + temperatura + "ºC </td></tr>" +
                 "<tr><td>" + Strings.table_prec + ": </td><td> " + precipitacio + " mm </td></tr>" +
                 "<tr><td>" + Strings.table_hum + ": </td><td> " + humitat + "% </td></tr>" +
                 "<tr><td>" + Strings.table_wind + ": </td><td> " + vent + " m/s </td></tr>" +
                 "</table>"
 
-              // metadata
+              // Metadades
               var data = new Date(f.attributes.DATA);
               metadades = Strings.text_station1 + station + Strings.text_station2 +
                 data.getDate() + "/" + String(data.getMonth() + 1) + "/" + data.getFullYear();

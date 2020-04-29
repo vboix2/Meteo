@@ -30,8 +30,7 @@ define({
       table_wind: "Maximum wind intensity",
       text_station1: "Data from station ",
       text_station2: " during day",
-      _featureAction_GetMeteo: "Weather situation",
-      _featureAction_GetActualMeteo: "Actual weather"
+      _featureAction_GetMeteo: "Weather situation"
     }),
     "ca": 1,
     "es": 1
