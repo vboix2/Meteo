@@ -4,6 +4,7 @@ define({
       header1: "Meteorological data layers",
       header2: "Wildfire weather",
       layer_weather: "Current values",
+      layer_xdde: "Lightnings (last 24h)",
       layer_xema: "Weather stations (XEMA)",
       layer_clima: "Climatic maps",
       layer_temp: "Temperature",

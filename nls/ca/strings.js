@@ -3,6 +3,7 @@ define({
     "header1": "Capes d'informació meteorològica",
     "header2": "Situació meteorològica dels incendis",
     "layer_weather": "Valors actuals",
+    "layer_xdde": "Llamps (darreres 24h)",
     "layer_xema": "Estacions meteorològiques (XEMA)",
     "layer_clima": "Mapes climàtics",
     "layer_temp": "Temperatura",

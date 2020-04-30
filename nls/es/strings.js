@@ -3,6 +3,7 @@ define({
   "header1": "Capas de información meteorológica",
   "header2": "Situación meteorológica de los incendios",
   "layer_weather": "Valores actuales",
+  "layer_xdde": "Rayos (últimas 24h)",
   "layer_xema": "Estaciones meteorológicas (XEMA)",
   "layer_clima": "Mapas climáticos",
   "layer_temp": "Temperatura",
