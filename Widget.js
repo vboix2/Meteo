@@ -53,7 +53,7 @@ define(['dojo/_base/declare',
         this.precMensual = this.map.getLayer("wms_5172");
 
         // XDDE Layer
-        this.XDDE = new CSVLayer("widgets/Meteo/XDDE/llamps.csv", {
+        this.XDDE = new CSVLayer("widgets/Meteo/xdde.csv", {
           columnDelimiter: ";",
           fields: [{ name: "latitude", type: "Number" },
           { name: "longitude", type: "Number" }],
